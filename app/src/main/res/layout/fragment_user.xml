@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="32dp">
 
-    <ImageView
+    <com.example.randomuserapp.user.views.CustomImageView
         android:id="@+id/pictureImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
