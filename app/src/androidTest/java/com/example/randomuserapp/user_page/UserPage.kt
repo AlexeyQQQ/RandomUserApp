@@ -9,7 +9,6 @@ import com.example.randomuserapp.R
 import org.hamcrest.Matcher
 
 class UserPage(
-    private val pictureUrl: String,
     private val firstName: String,
     private val lastName: String,
     private val gender: String,
