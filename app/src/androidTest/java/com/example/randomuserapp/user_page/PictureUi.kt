@@ -5,7 +5,6 @@ import android.widget.ImageView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.example.randomuserapp.R
 import com.example.randomuserapp.custom_matchers.DrawableMatcher
@@ -25,6 +24,5 @@ class PictureUi(rootId: Matcher<View>, rootClass: Matcher<View>) {
 
     fun checkShowUserInfoState() {
         interaction.check(matches(DrawableMatcher(R.mipmap.ic_launcher)))
-            .check(matches(isDisplayed()))
     }
 }

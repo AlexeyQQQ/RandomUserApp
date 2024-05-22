@@ -1,6 +1,11 @@
 package com.example.randomuserapp
 
 import com.example.randomuserapp.load.LoadResult
+import com.example.randomuserapp.load.presentation.LoadRepository
+import com.example.randomuserapp.load.presentation.LoadUiState
+import com.example.randomuserapp.load.presentation.LoadViewModel
+import com.example.randomuserapp.load.presentation.RunAsync
+import com.example.randomuserapp.load.presentation.UiObservable
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -25,7 +30,7 @@ class LoadViewModelTest {
         assertEquals(true, repository.lastScreenIsSaved)
 
         // step 2 state error
-        assertEquals(LoadUiState.Error(message = "fail"), showUi.uiStateList[1])
+        assertEquals(LoadUiState.Error(message = "fail"), uiObservable.uiStateCallList[1])
 
         // step 3 state progress
         viewModel.retry()
@@ -52,7 +57,7 @@ private class FakeUiObservable : UiObservable {
     override fun clearObserver() = Unit
 }
 
-class FakeRunAsync : RunAsync {
+private class FakeRunAsync : RunAsync {
 
     override fun <T : Any> runAsync(background: () -> T, ui: (T) -> Unit) {
         val result = background.invoke()
@@ -60,7 +65,7 @@ class FakeRunAsync : RunAsync {
     }
 }
 
-class FakeLoadRepository : LoadRepository {
+private class FakeLoadRepository : LoadRepository {
 
     var success: Boolean = false
     var lastScreenIsSaved: Boolean = false

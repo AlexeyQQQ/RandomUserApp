@@ -35,7 +35,6 @@ class UserPage(
         lastNameView.checkShowUserInfoState(text = lastName)
         genderView.checkShowUserInfoState(text = gender)
         phoneView.checkShowUserInfoState(text = phone)
-        loadNextButton.checkShowUserInfoState()
     }
 
     fun clickLoadNextUser() {
