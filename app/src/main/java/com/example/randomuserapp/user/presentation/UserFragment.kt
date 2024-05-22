@@ -36,7 +36,16 @@ class UserFragment : Fragment() {
             (requireActivity() as UserNavigation).navigateFromUserToLoad()
         }
 
-        val uiState: UserUiState = viewModel.init(savedInstanceState == null)
+        val userUiState: UserUiState = viewModel.init(savedInstanceState == null)
+        with(binding) {
+            userUiState.update(
+                pictureImageView,
+                firstNameTextView,
+                lastNameTextView,
+                genderTextView,
+                phoneTextView,
+            )
+        }
     }
 
     override fun onDestroy() {
