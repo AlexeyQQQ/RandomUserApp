@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.randomuserapp.core.PicEngine
 
-class CustomImageView : AppCompatImageView, ShowImageUrl {
+class CustomImageView : AppCompatImageView, UpdateImageUrl {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet)
@@ -22,7 +22,7 @@ class CustomImageView : AppCompatImageView, ShowImageUrl {
         (context.applicationContext as ProvidePicEngine).engine()
     }
 
-    override fun show(url: String) {
+    override fun updateImageUrl(url: String) {
         this.url = url
         engine.show(this, url)
     }
@@ -38,7 +38,7 @@ class CustomImageView : AppCompatImageView, ShowImageUrl {
     override fun onRestoreInstanceState(state: Parcelable?) {
         val restoredUrl = state as CustomImageViewSavedUrl
         super.onRestoreInstanceState(restoredUrl.superState)
-        show(restoredUrl.restore())
+        updateImageUrl(restoredUrl.restore())
     }
 }
 
@@ -46,6 +46,6 @@ interface ProvidePicEngine {
     fun engine(): PicEngine
 }
 
-interface ShowImageUrl {
-    fun show(url: String)
+interface UpdateImageUrl {
+    fun updateImageUrl(url: String)
 }

@@ -1,12 +1,12 @@
 package com.example.randomuserapp.user.presentation
 
-import com.example.randomuserapp.user.views.image.ShowImageUrl
+import com.example.randomuserapp.user.views.image.UpdateImageUrl
 import com.example.randomuserapp.user.views.text.UpdateText
 
 interface UserUiState {
 
     fun update(
-        pictureImageView: ShowImageUrl,
+        pictureImageView: UpdateImageUrl,
         firstNameTextView: UpdateText,
         lastNameTextView: UpdateText,
         genderTextView: UpdateText,
@@ -24,13 +24,13 @@ interface UserUiState {
     ) : UserUiState {
 
         override fun update(
-            pictureImageView: ShowImageUrl,
+            pictureImageView: UpdateImageUrl,
             firstNameTextView: UpdateText,
             lastNameTextView: UpdateText,
             genderTextView: UpdateText,
             phoneTextView: UpdateText
         ) {
-            pictureImageView.show(imageUrl)
+            pictureImageView.updateImageUrl(imageUrl)
             firstNameTextView.updateText(firstName)
             lastNameTextView.updateText(lastName)
             genderTextView.updateText(gender)

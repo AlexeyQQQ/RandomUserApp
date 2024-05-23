@@ -1,4 +1,4 @@
-package com.example.randomuserapp.load
+package com.example.randomuserapp.load.data
 
 interface LoadResult {
 
