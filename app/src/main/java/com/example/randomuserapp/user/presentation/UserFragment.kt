@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.randomuserapp.core.ManageViewModels
+import com.example.randomuserapp.core.di.ManageViewModels
 import com.example.randomuserapp.databinding.FragmentUserBinding
 
 class UserFragment : Fragment() {

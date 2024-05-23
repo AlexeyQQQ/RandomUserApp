@@ -2,6 +2,9 @@ package com.example.randomuserapp.core
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
+import com.example.randomuserapp.core.di.Core
+import com.example.randomuserapp.core.di.ManageViewModels
+import com.example.randomuserapp.core.di.ProvideViewModel
 import com.example.randomuserapp.user.views.image.ProvidePicEngine
 
 class App : Application(), ManageViewModels, ProvidePicEngine {
@@ -11,7 +14,10 @@ class App : Application(), ManageViewModels, ProvidePicEngine {
 
     override fun onCreate() {
         super.onCreate()
-        core = Core()
+        core = Core(this)
+        factory = ProvideViewModel.Factory(
+            ProvideViewModel.Make(core)
+        )
     }
 
     override fun <T : ViewModel> viewModel(clazz: Class<T>): T {
@@ -23,6 +29,6 @@ class App : Application(), ManageViewModels, ProvidePicEngine {
     }
 
     override fun engine(): PicEngine {
-        return if (core.uiTest) PicEngine.Mock() else PicEngine.Base()
+        return if (core.runUiTest) PicEngine.Mock() else PicEngine.Base()
     }
 }

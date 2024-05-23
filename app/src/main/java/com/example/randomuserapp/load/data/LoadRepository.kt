@@ -1,9 +1,9 @@
 package com.example.randomuserapp.load.data
 
-import com.example.randomuserapp.core.CacheDataSource
-import com.example.randomuserapp.core.CloudDataSource
-import com.example.randomuserapp.core.CloudResponse
-import com.example.randomuserapp.core.StringCache
+import com.example.randomuserapp.core.data.CacheDataSource
+import com.example.randomuserapp.core.data.CloudDataSource
+import com.example.randomuserapp.core.data.CloudResponse
+import com.example.randomuserapp.core.data.StringCache
 import com.example.randomuserapp.load.presentation.LoadScreen
 
 interface LoadRepository {

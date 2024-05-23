@@ -1,4 +1,4 @@
-package com.example.randomuserapp.core
+package com.example.randomuserapp.core.data
 
 import com.google.gson.Gson
 

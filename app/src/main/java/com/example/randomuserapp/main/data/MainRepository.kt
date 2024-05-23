@@ -1,6 +1,6 @@
 package com.example.randomuserapp.main.data
 
-import com.example.randomuserapp.core.StringCache
+import com.example.randomuserapp.core.data.StringCache
 import com.example.randomuserapp.main.presentation.Screen
 
 interface MainRepository {

@@ -1,4 +1,4 @@
-package com.example.randomuserapp.core
+package com.example.randomuserapp.core.data
 
 import okhttp3.Request
 import okio.Timeout
@@ -10,13 +10,13 @@ import java.net.UnknownHostException
 
 interface UserInfoService {
 
-    // todo retrofit https://randomuser.me/api/
-
     @GET("api/")
     fun data(): Call<CloudResponse>
 }
 
-class MockService : UserInfoService {
+class MockService(
+    private val currentIndex: IntCache
+) : UserInfoService {
 
     private val mockResponse = listOf(
         CloudResponse(
@@ -41,7 +41,6 @@ class MockService : UserInfoService {
         )
     )
 
-    private var currentIndex = 0
     private var showSuccess = false
 
     override fun data(): Call<CloudResponse> {
@@ -53,8 +52,10 @@ class MockService : UserInfoService {
                 override fun clone(): Call<CloudResponse> = this
 
                 override fun execute(): Response<CloudResponse> {
-                    if (currentIndex == 2) currentIndex = 0
-                    return Response.success(mockResponse[currentIndex++])
+                    var index = currentIndex.read()
+                    if (index == 2) index = 0
+                    currentIndex.save(index + 1)
+                    return Response.success(mockResponse[index])
                 }
 
                 override fun isExecuted(): Boolean = false

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModel
 import com.example.randomuserapp.R
-import com.example.randomuserapp.core.ManageViewModels
+import com.example.randomuserapp.core.di.ManageViewModels
 import com.example.randomuserapp.databinding.ActivityMainBinding
 import com.example.randomuserapp.load.presentation.LoadNavigation
 import com.example.randomuserapp.load.presentation.LoadScreen

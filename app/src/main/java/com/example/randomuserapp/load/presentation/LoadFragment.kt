@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.randomuserapp.core.ManageViewModels
+import com.example.randomuserapp.core.di.ManageViewModels
 import com.example.randomuserapp.databinding.FragmentLoadBinding
 
 class LoadFragment : Fragment() {
@@ -32,7 +32,7 @@ class LoadFragment : Fragment() {
         val manageViewModels = requireActivity() as ManageViewModels
         viewModel = manageViewModels.viewModel(LoadViewModel::class.java)
 
-        val showUi: (LoadUiState) -> Unit = { loadUiState ->
+        showUi = { loadUiState ->
             loadUiState.update(
                 binding.progressBar,
                 binding.errorTextView,
