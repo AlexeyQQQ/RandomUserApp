@@ -1,7 +1,7 @@
 package com.example.randomuserapp
 
 import com.example.randomuserapp.core.UserInfo
-import com.example.randomuserapp.user.presentation.UserRepository
+import com.example.randomuserapp.user.data.UserRepository
 import com.example.randomuserapp.user.presentation.UserUiState
 import com.example.randomuserapp.user.presentation.UserViewModel
 import org.junit.Assert.assertEquals

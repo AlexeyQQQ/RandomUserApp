@@ -1,4 +1,4 @@
-package com.example.randomuserapp.user.views
+package com.example.randomuserapp.user.views.image
 
 import android.content.Context
 import android.os.Parcelable

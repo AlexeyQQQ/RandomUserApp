@@ -1,7 +1,7 @@
 package com.example.randomuserapp
 
-import com.example.randomuserapp.load.LoadResult
-import com.example.randomuserapp.load.presentation.LoadRepository
+import com.example.randomuserapp.load.data.LoadRepository
+import com.example.randomuserapp.load.data.LoadResult
 import com.example.randomuserapp.load.presentation.LoadUiState
 import com.example.randomuserapp.load.presentation.LoadViewModel
 import com.example.randomuserapp.load.presentation.RunAsync

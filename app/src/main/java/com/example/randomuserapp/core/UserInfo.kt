@@ -1,6 +1,5 @@
 package com.example.randomuserapp.core
 
-// todo map ResponseCloud to UserInfo in UserRepository
 data class UserInfo(
     val imageUrl: String,
     val firstName: String,

@@ -1,6 +1,6 @@
 package com.example.randomuserapp
 
-import com.example.randomuserapp.main.presentation.MainRepository
+import com.example.randomuserapp.main.data.MainRepository
 import com.example.randomuserapp.main.presentation.MainViewModel
 import com.example.randomuserapp.main.presentation.Screen
 import org.junit.Assert.assertEquals
